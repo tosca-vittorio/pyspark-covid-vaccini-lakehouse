@@ -1,0 +1,178 @@
+#############################################
+# 0) Temporary ignores
+#############################################
+
+# WIP documentation concepts (will be tracked later)
+docs/concepts/
+
+# Temporary structure snapshot
+struttura.txt
+
+
+#############################################
+# 1) Local configuration & secrets
+#############################################
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local override configs (if you create them)
+configs/local/
+configs/*.local.*
+configs/*.secret.*
+configs/secrets/
+
+# Credentials / keys
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+aws-credentials*
+gcp-credentials*
+azure-credentials*
+
+
+#############################################
+# 2) Raw data & private datasets (LOCAL ONLY)
+#############################################
+
+# Raw dataset should not be committed (heavy + privacy)
+data/raw/
+data/external/
+
+
+#############################################
+# 3) Lakehouse materialized outputs (generated)
+#############################################
+
+# Generated layers (bronze/silver/gold)
+lakehouse/bronze/
+lakehouse/silver/
+lakehouse/gold/
+
+# Generic outputs (reports, exports, results)
+outputs/
+
+
+#############################################
+# 4) Spark / PySpark runtime artifacts
+#############################################
+
+# Spark event logs / history server logs
+spark-events/
+spark-warehouse/
+
+# PySpark temporary / local cluster artifacts
+metastore_db/
+derby.log
+
+# Delta Lake logs
+**/_delta_log/
+
+# Checkpoints (Structured Streaming)
+**/checkpoints/
+**/checkpoint/
+
+
+#############################################
+# 5) Python build artifacts & cache
+#############################################
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test & coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Type checker caches
+.mypy_cache/
+.pyre/
+.pytype/
+
+
+#############################################
+# 6) Notebooks & data science artifacts
+#############################################
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Experiment tracking
+mlruns/
+wandb/
+tensorboard/
+
+
+#############################################
+# 7) Logs & runtime dumps
+#############################################
+
+logs/
+*.log
+*.out
+*.dump
+*.stacktrace
+
+
+#############################################
+# 8) Data formats & big files (avoid committing by accident)
+#############################################
+
+*.parquet
+*.orc
+*.avro
+*.delta
+*.snappy
+*.zst
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+*.db
+*.sqlite
+*.sqlite3
+
+
+#############################################
+# 9) OS / Editor / IDE
+#############################################
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+.idea/
+*.iml
+
+.vscode/
+.vs/
+
+*.swp
+*.swo
