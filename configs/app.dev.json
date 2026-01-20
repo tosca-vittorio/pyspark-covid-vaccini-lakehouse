@@ -1,0 +1,6 @@
+{
+  "log_level": "DEBUG",
+  "spark": {
+    "app_name": "pyspark-covid-vaccini-lakehouse-dev"
+  }
+}

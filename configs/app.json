@@ -1,0 +1,15 @@
+{
+  "paths": {
+    "raw": "data/raw",
+    "bronze": "lakehouse/bronze",
+    "silver": "lakehouse/silver",
+    "gold": "lakehouse/gold",
+    "outputs": "outputs",
+    "samples": "samples"
+  },
+  "write_mode": "overwrite",
+  "log_level": "INFO",
+  "spark": {
+    "app_name": "pyspark-covid-vaccini-lakehouse"
+  }
+}
