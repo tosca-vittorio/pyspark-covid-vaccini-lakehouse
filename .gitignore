@@ -2,8 +2,12 @@
 # 0) Temporary ignores
 #############################################
 
-# WIP documentation concepts (will be tracked later)
-docs/concepts/
+# Ignore all docs except core tracked documents
+docs/**
+!docs/
+!docs/ARCHITECTURE.md
+!docs/TIMELINE.md
+!docs/toDo.md
 
 # Temporary structure snapshot
 struttura.txt
