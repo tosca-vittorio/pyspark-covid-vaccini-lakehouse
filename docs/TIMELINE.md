@@ -98,29 +98,31 @@ La timeline è organizzata in step sequenziali, ciascuno con **Definition of Don
 **DoD (01.0):**
 * La macchina può installare e importare PySpark partendo da zero con venv + requirements.
 
-### 01.1 — Prerequisito Java (Spark runtime)
+### ✅ 01.1 — Prerequisito Java (Spark runtime)
 
-* ⬜ Verifica installazione Java presente e funzionante (`java -version`).
-* ⬜ Allineamento `JAVA_HOME` se necessario.
+* ✅ Verifica installazione Java presente e funzionante (`java -version`).
+* ✅ Allineamento `JAVA_HOME` se necessario.
+* ✅ Smoke test Spark OK (SparkSession avviata correttamente, versione stampata).
 
 **DoD (01.1):**
 * Spark può avviarsi senza errori di runtime legati a Java.
 
-### 01.2 — Smoke test Spark locale
+### ✅ 01.2 — Smoke test Spark locale
 
-* ⬜ Creazione job `src/jobs/00_smoke_spark.py`:
+* ✅ Creazione job `src/jobs/01c_smoke_spark.py`:
   * avvio `SparkSession`
   * lettura `samples/` (almeno i 2 CSV)
   * stampa schema + conteggio righe
   * scrittura output minimale in `outputs/` (non versionato)
-* ⬜ Run locale completato (exit code 0).
+* ✅ Run locale completato (exit code 0).
 
 **DoD (01.2):**
-* Un job PySpark gira in locale e produce output deterministico (anche minimale).
+* Job gira in locale (exit code 0)
+* Job produce un output deterministicamente ripetibile (anche minimale) 
 
 ### 01.3 — Standardizzazione comandi di run e logging
 
-* ⬜ Definizione comandi di run standard (es. `python -m src.jobs.00_smoke_spark` o equivalente).
+* ⬜ Definizione comandi di run standard (es. `python -m src.jobs.01c_smoke_spark.py` o equivalente).
 * ⬜ Setup logging minimo (console + livello configurabile da config).
 
 **DoD (01.3):**
@@ -145,6 +147,8 @@ Inoltre, la presenza di una nota esplicita su `data/raw/` e `samples/` è parte 
   * setup rapido (venv + requirements)
   * comando di run smoke test
   * nota su `data/raw/` (local-only) e `samples/` (versionabili)
+
+* ⬜ Allineamento v0.1 di `ARCHITECTURE.md` e `toDo.md` rispetto a `README.md` e `TIMELINE.md` (docs stabili).
 
 **DoD (01.4):**
 * Il repo ha un entrypoint minimo leggibile e sufficiente a eseguire lo smoke test in locale.
