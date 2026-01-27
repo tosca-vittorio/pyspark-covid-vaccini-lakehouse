@@ -180,3 +180,8 @@ Desktop.ini
 
 *.swp
 *.swo
+
+#############################################
+# 9bis) Node / NPM (if accidentally generated)
+#############################################
+node_modules/
